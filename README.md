@@ -18,7 +18,7 @@ https://github.com/jnorthrup/deeptraffic/blob/e04a4ce356c24c5378189e7161a7faedae
 
 re-uptake curve
 ===
-curious but not surprising, this works, but not out of the box.  there seems to exist a short fitting cost for creating a new network aand bridging the old one.
+curious but not surprising, this works, but not out of the box.  there seems to exist a short fitting cost for creating a new layer and bridging the old one.
 
 the re-uptake curve looks a little bit like this, and takes about 1-2 minutes on my laptop training.
 
