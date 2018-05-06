@@ -14,10 +14,13 @@ one of the tricks which may or may not lend to growing the net ad-hoc more easil
 
 if and when you think it's likely you need to increase the dimensionality capacity of the hidden layers, the bridge+bias functions can help you wire in a new extension layer to the prior of the same size, allowing for a replication of the filters and/or bias away from the regression hot-spot.  it is assumed you have a refactoring editor like intellij or webstorm to lift out variables and splice the function pairs.
 
+
+[example - brain surgery with a butter knife](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L6993)
+
 bias function(s)
 ====
   * bias(n):  create a field of 1's to teleport a neighboring bias 1 layer away (and change the evolution hotspot in the process)
-    * [exmaple - bias](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L6946)
+    * [example - bias](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L6946)
 
 
 filter function(s)
