@@ -1,26 +1,32 @@
 # deeptraffic
-preserving some small js to graft new cloned layers between existing ones
 
-net (8).js was not inspiring, but it seemed to do the right thing.  
+most of the deeptraffic solutions i see on github look like brute force and overfitting, using mostly defaults.  i have made a graduated configuration that makes it interesting to watch the behaviors emerge in minutes 
 
-i wanted to see what it would take to graft another layer without destroying the precious cobwebs it depends on.
+I have also been able to make a few observations and build a few functions to grow an existing trained net without starting over.  
 
-net (10).js the reserialized edition of net8.js after the client loads it, showing that at least the js is doing what was intended if not the mechanics.
+ref variable
+===
+starting at about `ref=7` you can coerce almost any desired behavior out of the net in a matter of a minute or two. as you plataeu (quickly in the lower ranks) you keep bumping up the ref, and occasionaly revisting the cluehammer (ref 6 or 7) when the net goes belly up.
 
+by ref 17 (iteratively) you'll be able to squeeze low-70's out of a modest network and decide how to grow the capacity when you bottom out 
+
+one of the tricks which may or may not lend to growing the net ad-hoc more easily is to reduce the dimensions of control to 2 layers instead of 5 - and it seems to encourage the all-important braking in a traffic jam which has eluded nearly every other agonizing brute force attempt i've made to date.
+
+if and when you think it's likely you need to increase the dimensionality capacity of the hidden layers, the bridge+bias functions can help you wire in a new extension layer to the prior of the same size, allowing for a replocation of the filters and/or bias away from the regression hot-spot.  it is assumed you have a refactoring editor like intellij or webstorm to lift out variables and splice the function pairs.
+
+bias function(s)
+====
+  * bias(n):  create a field of 1's to teleport a neighboring bias 1 layer away (and change the evolution hotspot in the process)
+
+filter function(s)
+===
+ * bridge(n): create a diagonal matrix of 1's as a filter at layer x+1 from trained layer x 
+ 
 ![image](https://user-images.githubusercontent.com/73514/39615013-09630958-4f9e-11e8-8bb8-9a1e92ae69ef.png)
 
-code here
-https://github.com/jnorthrup/deeptraffic/blob/e04a4ce356c24c5378189e7161a7faedaee9d51e/net%20(8).js#L141
-
-
-![image](https://user-images.githubusercontent.com/73514/39614859-2f2f0ce6-4f9d-11e8-9e33-eb70b51c8f60.png)
-
-
-re-uptake curve
-===
-curious but not surprising, this works, but not out of the box.  there seems to exist a short fitting cost for creating a new layer and bridging the old one.
-
-the re-uptake curve looks a little bit like this, and takes about 1-2 minutes on my laptop training.
-
-![image](https://user-images.githubusercontent.com/73514/39627564-84ca0650-4fd0-11e8-9ea9-76797d6c9083.png)
-
+ * widenTemporalWithZeros(oldfilters): create non-zero temporal window setting and insert this as you would a bridge.  this creates new temporal filters with 0 - much like bridge  -- brain damage is inevitable, but not initally visible.   i did not see coherent salvagability when the unmasking of new tempooral inputs surfaced.  regression kept recurring worse each time, expect to go back to ref=7 or reset.  should probably go with .1 instead of 0 fills 
+ 
+ * splitTemporal(oldfilters): asa above.   this attempts to duplicate the original input filters as new temporal entries with 0 action outputs -- the brain appears to get slightly muddy, may regress hard but will eventually detune the temporal inputs to whatever minimal value they serve.  this may assist in integrating the agents. 
+ 
+ * widen(newSize, filterSize, old): if you change the depth of input this function acts like the bridge function and makes an effort not to overwhelm (0.1) the trained nets -- they will recover if you downstep ref 
+  
