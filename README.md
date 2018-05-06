@@ -10,12 +10,16 @@ starting at about `ref=7` you can coerce almost any desired behavior out of the 
 
 by ref 17 (iteratively) you'll be able to squeeze low-70's out of a modest network and decide how to grow the capacity when you bottom out 
 
+[ref - example](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L2)
+
+brain surgery in deeptraffic
+====
 one of the tricks which may or may not lend to growing the net ad-hoc more easily is to reduce the dimensions of control to 2 layers instead of 5 - and it seems to encourage the all-important braking in a traffic jam which has eluded nearly every other agonizing brute force attempt i've made to date.
 
 if and when you think it's likely you need to increase the dimensionality capacity of the hidden layers, the bridge+bias functions can help you wire in a new extension layer to the prior of the same size, allowing for a replication of the filters and/or bias away from the regression hot-spot.  it is assumed you have a refactoring editor like intellij or webstorm to lift out variables and splice the function pairs.
 
 
-[example - brain surgery with a butter knife](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L6993)
+[example - brain surgery in deeptraffic](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L6993)
 
 bias function(s)
 ====
