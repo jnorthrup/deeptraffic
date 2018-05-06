@@ -12,6 +12,9 @@ by ref 17 (iteratively) you'll be able to squeeze low-70's out of a modest netwo
 
 [ref - example](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L2)
 
+a captivating ~15 minutes after net (18).js widening surgery from ref= 8 thru 13
+![image](https://user-images.githubusercontent.com/73514/39670464-fcea409a-512f-11e8-853d-5a4edbbb5688.png)
+
 brain surgery in deeptraffic
 ===
 
