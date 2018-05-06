@@ -33,10 +33,12 @@ filter function(s)
    * [example - bridge](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L6956)
 ![image](https://user-images.githubusercontent.com/73514/39615013-09630958-4f9e-11e8-8bb8-9a1e92ae69ef.png)
 
+
+* widen(newSize, filterSize, old): if you change the depth of input this function acts like the bridge function and makes an effort not to overwhelm (0.1) the trained nets -- they will recover if you downstep ref 
+   * [example - widen](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L6968) 
+  
+
  * widenTemporalWithZeros(oldfilters): create non-zero temporal window setting and insert this as you would a bridge.  this creates new temporal filters with 0 - much like bridge  -- brain damage is inevitable, but not initally visible.   i did not see coherent salvagability when the unmasking of new tempooral inputs surfaced.  regression kept recurring worse each time, expect to go back to ref=7 or reset.  should probably go with .1 instead of 0 fills 
  
  * splitTemporal(oldfilters): asa above.   this attempts to duplicate the original input filters as new temporal entries with 0 action outputs -- the brain appears to get slightly muddy, may regress hard but will eventually detune the temporal inputs to whatever minimal value they serve.  this may assist in integrating the agents. 
  
- * widen(newSize, filterSize, old): if you change the depth of input this function acts like the bridge function and makes an effort not to overwhelm (0.1) the trained nets -- they will recover if you downstep ref 
-   * [example - widen](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L6968) 
-  
