@@ -26,7 +26,8 @@ bias function(s)
 ====
   * bias(n):  create a field of 1's to teleport a neighboring bias 1 layer away (and change the evolution hotspot in the process)
     * [example - bias](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L6946)
-
+  
+  * widenBias
 
 filter function(s)
 ===
@@ -42,6 +43,13 @@ filter function(s)
  * widenTemporalWithZeros(oldfilters): create non-zero temporal window setting and insert this as you would a bridge.  this creates new temporal filters with 0 - much like bridge  -- brain damage is inevitable, but not initally visible.   i did not see coherent salvagability when the unmasking of new tempooral inputs surfaced.  regression kept recurring worse each time, expect to go back to ref=7 or reset.  should probably go with .1 instead of 0 fills 
  
  * splitTemporal(oldfilters): asa above.   this attempts to duplicate the original input filters as new temporal entries with 0 action outputs -- the brain appears to get slightly muddy, may regress hard but will eventually detune the temporal inputs to whatever minimal value they serve.  this may assist in integrating the agents. 
+ 
+Layer Widening
+===
+*widenLayer(newSize,firstLayer,nextLayer)
+*widenLayerRandom (newSize,firstLayer,nextLayer)
+
+[example widenLayerRandom](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(22).js#L14902)
  
 
 tweak - 2 dimensions for 4 directions, instead of 5 dimensions 
