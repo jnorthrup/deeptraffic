@@ -46,8 +46,10 @@ filter function(s)
  
 Layer Widening
 ===
-*widenLayer(newSize,firstLayer,nextLayer)
-*widenLayerRandom (newSize,firstLayer,nextLayer)
+ 
+ * widenLayer(newSize,firstLayer,nextLayer)
+ 
+ * widenLayerRandom (newSize,firstLayer,nextLayer)
 
 [example widenLayerRandom](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(22).js#L14902)
  
