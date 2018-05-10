@@ -60,3 +60,11 @@ tweak - 2 dimensions for 4 directions, instead of 5 dimensions
 one of the tricks which may or may not lend to growing the net ad-hoc more easily is to reduce the dimensions of control to 2 layers instead of 5 - and it seems to encourage the all-important braking in a traffic jam which has eluded nearly every other agonizing brute force attempt i've made to date.
 
 [example - tweak ](https://github.com/jnorthrup/deeptraffic/blob/master/net%20(18).js#L79)
+
+
+random sed
+===
+
+ `sed -e  s/,'"/,\n\'t'"'/g  -e s/layers'"':/'layers"':nukeTime'(/' -e s/num_inpu'ts":5}]}'/num_input's":5}])}/' -i net\ \(91\).js`
+ 
+ 
