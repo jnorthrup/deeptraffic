@@ -64,7 +64,8 @@ one of the tricks which may or may not lend to growing the net ad-hoc more easil
 
 random sed
 ===
+these js files get pretty big, and defy simple formatting and refactoring sometimes. if you stick this in your js files, it will probably modify itself when you use it.  so i stuck it in this readme. 
 
- `sed -e  s/,'"/,\n\'t'"'/g  -e s/layers'"':/'layers"':nukeTime'(/' -e s/num_inpu'ts":5}]}'/num_input's":5}])}/' -i net\ \(91\).js`
+ `sed -e  s/,'"/,\n\'t'"'/g  -e s/layers'"':/'layers"':nukeTime'(/' -e s/num_inpu'ts":5}]'/num_input's":5}])/' -i net\ \(91\).js`
  
  
